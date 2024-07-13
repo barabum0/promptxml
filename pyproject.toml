@@ -1,20 +1,23 @@
 [tool.poetry]
-package-mode = false
-name = "python-template"
-description = "Description"
-authors = ["Roman Poltorabatko <r.m.poltorabatko@gmail.com>"]
+name = "promptxml"
+version = "0.1"
+description = "A tool designed to create prompt instructions for neural networks in XML format."
+authors = ["sushka <r.m.poltorabatko@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
+lxml = "^5.2.2"
+
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
-mypy = "^1.10.0"
+mypy = "^1.10.1"
 isort = "^5.13.2"
 pre-commit = "^3.7.1"
+pytest = "^8.2.2"
+pytest-asyncio = "^0.23.7"
 
 [tool.black]
 line-length = 120
@@ -28,3 +31,11 @@ src_paths = ["."]
 python_version = "3.12"
 disallow_untyped_defs = true
 ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
