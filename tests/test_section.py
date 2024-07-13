@@ -1,5 +1,4 @@
-from promptxml.item import PromptItem
-from promptxml.section import PromptSection
+from promptxml import PromptItem, PromptSection
 
 
 def test_section() -> None:
@@ -46,7 +45,7 @@ def test_section() -> None:
         ),
     )
 
-    print(section._to_xml())
+    print(section.to_xml())
     print(section.make_pretty())
 
     assert (

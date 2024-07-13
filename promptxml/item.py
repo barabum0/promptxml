@@ -6,7 +6,7 @@ class PromptItem:
         self.label = label
         self.value = value
 
-    def _to_xml(self) -> str:
+    def to_xml(self) -> str:
         return f"<{self.label}>{self.value}</{self.label}>"
 
     @classmethod
