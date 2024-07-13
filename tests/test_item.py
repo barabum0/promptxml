@@ -1,6 +1,6 @@
 import pytest
 
-from promptxml.item import PromptItem
+from promptxml import PromptItem
 
 
 @pytest.mark.parametrize(("label", "value"), [("guideline", "Do."), ("line", "content")])

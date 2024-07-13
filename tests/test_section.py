@@ -1,5 +1,4 @@
-from promptxml.item import PromptItem
-from promptxml.section import PromptSection
+from promptxml import PromptItem, PromptSection
 
 
 def test_section() -> None:
