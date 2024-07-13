@@ -1,4 +1,5 @@
 from typing import Iterable, Self
+from xml.sax.saxutils import quoteattr
 
 
 class PromptItem:
@@ -7,7 +8,7 @@ class PromptItem:
         self.value = value
 
     def to_xml(self) -> str:
-        return f"<{self.label}>{self.value}</{self.label}>"
+        return f"<{self.label}>{quoteattr(self.value, entities={})}</{self.label}>"
 
     @classmethod
     def build_multiple(cls, *, label: str, values: Iterable[str]) -> list[Self]:
