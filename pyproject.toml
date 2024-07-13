@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "promptxml"
-version = "0.1"
+version = "0.1.1"
 description = "A tool designed to create prompt instructions for neural networks in XML format."
 authors = ["sushka <r.m.poltorabatko@gmail.com>"]
 license = "MIT"
