@@ -9,9 +9,9 @@ def test_item(label: str, value: str) -> None:
 
     assert item1.label == label
     assert item1.value == value
-    assert item1._to_xml() == f"<{label}>{value}</{label}>"
+    assert item1.to_xml() == f"<{label}>{value}</{label}>"
 
-    print(item1._to_xml())
+    print(item1.to_xml())
 
 
 @pytest.mark.parametrize(("label", "values"), [("guideline", ["Do 1", "Do 2"]), ("line", ["content 1", "content 2"])])
@@ -21,6 +21,6 @@ def test_item_build_multiple(label: str, values: list[str]) -> None:
     for item, value in zip(items, values):
         assert item.label == label
         assert item.value == value
-        assert item._to_xml() == f"<{label}>{value}</{label}>"
+        assert item.to_xml() == f"<{label}>{value}</{label}>"
 
-        print(item._to_xml())
+        print(item.to_xml())

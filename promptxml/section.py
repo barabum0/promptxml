@@ -19,8 +19,8 @@ class PromptSection:
 
         self._items.extend(items)
 
-    def _to_xml(self) -> str:
-        value = "".join(i._to_xml() for i in self._items)
+    def to_xml(self) -> str:
+        value = "".join(i.to_xml() for i in self._items)
         if len(self._attributes) == 0:
             return f"<{self.label}>{value}</{self.label}>"
 
@@ -29,7 +29,7 @@ class PromptSection:
         return f"<{self.label} {attributes}>{value}</{self.label}>"
 
     def make_pretty(self, indent: str = "  ") -> str:
-        _xml = self._to_xml()
+        _xml = self.to_xml()
 
         dom = xml.dom.minidom.parseString(_xml)
         pretty_xml = dom.toprettyxml(indent=indent)
